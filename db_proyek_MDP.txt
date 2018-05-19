@@ -1,0 +1,17 @@
+User
+	id_user, nama, email, pass, gender, tgl_lahir, role
+Tempat Wisata
+	nama_tempat, alamat, telp, gambar, deskripsi , rating
+HTour
+	id_tour, nama_tour, tgl_pergi, tgl_pulang, harga_tour ,tour_leader
+DTour
+	id_tour(f), id_user(f), jumlah_org
+	nb : asumsi 1 user dpt daftar untuk banyak org
+Payment
+	id_payment, id_tourleader(f), id_user(f), jumlah, status
+Booking
+	id_booking, id_user(f), tgl_booking, status
+Posting
+	id_posting, judul, isi, tgl_posting
+Message 
+	id_message, id_user(f), id_tourleader(f), pesan, tgl_message

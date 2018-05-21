@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "239614051430",
+    "firebase_url": "https://tourbook-56eb6.firebaseio.com",
+    "project_id": "tourbook-56eb6",
+    "storage_bucket": "tourbook-56eb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239614051430:android:ad56cfe8eafa055b",
+        "android_client_info": {
+          "package_name": "stts.edu.tourbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239614051430-evojpa8pklti6rgbiefgefmgs95rqequ.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "stts.edu.tourbook",
+            "certificate_hash": "19406a61615cdd0fbace0eb902dbf9a1ef83d050"
+          }
+        },
+        {
+          "client_id": "239614051430-3mpinpdp4q36bahcad5lj81a4mdg2irh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArWekoqUgXvCGCif7CsW6x_8ndPQmAju4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239614051430-3mpinpdp4q36bahcad5lj81a4mdg2irh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

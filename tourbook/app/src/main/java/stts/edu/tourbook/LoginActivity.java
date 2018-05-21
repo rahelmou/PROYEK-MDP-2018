@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccountCreator;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText etEmail, etPass;
@@ -21,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
 
         etEmail.setTypeface(regfont);
         etPass.setTypeface(regfont);
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
     }
 }

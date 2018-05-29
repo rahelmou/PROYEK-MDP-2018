@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,6 +22,12 @@ import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.tasks.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,14 +43,17 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     EditText etEmail, etPass;
-
+    Button btnLogin, btnForget, btnSignUp;
     CallbackManager callbackManager = CallbackManager.Factory.create();
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+//    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestEmail()
+//            .build();
+//    GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+    MD5 md5encrypter = new MD5();
+
+    String urllocalhost = "10.212.12.194";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +62,28 @@ public class LoginActivity extends AppCompatActivity {
 
         etEmail = findViewById(R.id.etEmail);
         etPass = findViewById(R.id.etPass);
+        btnForget = findViewById(R.id.btnForget);
+        btnSignUp = findViewById(R.id.btnSignUp);
+        btnLogin = findViewById(R.id.btnLogin);
 
         Typeface regfont = Typeface.createFromAsset(getAssets(),  "fonts/latoregular.ttf");
 
         etEmail.setTypeface(regfont);
         etPass.setTypeface(regfont);
+        btnLogin.setTypeface(regfont);
+        btnForget.setTypeface(regfont);
+        btnSignUp.setTypeface(regfont);
 
         //GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
 
+
+//        SignInButton signInButton = findViewById(R.id.sign_in_button);
+//        //signInButton.setSize(SignInButton.SIZE_STANDARD);
+//        signInButton.setOnClickListener((View.OnClickListener) this);
+
+
+        //facebook
         final String EMAIL = "email";
 
         LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
@@ -69,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 // App code
-
+                Toast.makeText(getApplicationContext(), "Facebook login success.", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -106,82 +129,61 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public String md5(String md5) {
-        try {
-            java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
-            byte[] array = md.digest(md5.getBytes());
-            StringBuffer sb = new StringBuffer();
-            for (int i = 0; i < array.length; ++i) {
-                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
-            }
-            return sb.toString();
-        } catch (java.security.NoSuchAlgorithmException e) {
-        }
-        return null;
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+//        //updateUI(account);
+//
+//        if (account != null) {
+//            Intent it = new Intent(getApplicationContext(), HomeActivity.class);
+//            //it.putStringArrayListExtra("userdata", userdata);
+//            startActivity(it);
+//        }
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+//        if (requestCode == RC_SIGN_IN) {
+//            // The Task returned from this call is always completed, no need to attach
+//            // a listener.
+//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            handleSignInResult(task);
+//        }
+    }
+
+    //google
+    public void onClick(View v) {
+//        switch (v.getId()) {
+//            case R.id.sign_in_button:
+//                signIn();
+//                break;
+//            // ...
+//        }
+    }
+
+    private void signIn() {
+        //Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        //startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     protected void btnLoginClick(View v) {
 
         final String email = etEmail.getText().toString();
-        final String password = md5(etPass.getText().toString());
+        final String password = md5encrypter.md5(etPass.getText().toString());
         final ArrayList<String> userdata = new ArrayList<String>();
 
         RequestQueue myqueue;
         myqueue = Volley.newRequestQueue(this);
-        String urllogin = "http://192.168.1.4/tourbook_login_api/login.php";
-        String urlgetusers = "http://192.168.1.4/tourbook_login_api/getusers.php";
+        String urlgetusers = "http://" + urllocalhost + "/tourbook_login_api/getusers.php";
 
-//        JsonArrayRequest jar = new JsonArrayRequest(Request.Method.POST, urllogin, null,
-//                new Response.Listener<JSONArray>() {
-//                    @Override
-//                    public void onResponse(JSONArray response) {
-//                        try {
-//                            int code = response.getJSONObject(0).getInt("code");
-//                            String message = response.getJSONObject(1).getString("message");
-//                            JSONObject user;
-//                            if (response.length()==3) {
-//                                user = response.getJSONObject(2);
-//                                userdata.add(user.getString("id_user"));
-//                                userdata.add(user.getString("nama_user"));
-//                                userdata.add(user.getString("email"));
-//                                userdata.add(user.getString("password"));
-//                                userdata.add(user.getString("gender"));
-//                                userdata.add(user.getString("tanggal_lahir"));
-//                                userdata.add(user.getString("role"));
-//                            }
-//                            else
-//                                user = null;
-//
-//                            if (code == 0 || code == -1)
-//                            {
-//                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-//                            }
-//                            else
-//                            {
-//                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-//                                Intent i = new Intent(getApplicationContext(),HomeActivity.class);
-//                                i.putStringArrayListExtra("userdata", userdata);
-//                                startActivity(i);
-//                            }
-//
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        }) {
-//            protected Map<String, String> getParams() {
-//                Map<String, String> MyData = new HashMap<String, String>();
-//                MyData.put("email", email); //Add the data you'd like to send to the server.
-//                MyData.put("password", password); //Add the data you'd like to send to the server.
-//                return MyData;
-//            }
-//        };
         JsonArrayRequest jar = new JsonArrayRequest(Request.Method.GET, urlgetusers, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -237,5 +239,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         myqueue.add(jar);
+    }
+
+    public void btnForgetClick(View v)
+    {
+
+    }
+
+    public void btnSignUpClick(View v)
+    {
+        Intent it = new Intent(getApplicationContext(), SignUpActivity.class);
+        startActivity(it);
     }
 }

@@ -21,28 +21,49 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".HomeActivity" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity android:name=".CreateTourActivity" />
 =======
         <activity android:name=".FacebookLoginActivity"></activity>
+=======
+        <activity android:name=".FacebookLoginActivity" />
+>>>>>>> d9af1c624ae4827c38ef3e023675c05cfbcb365c
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 >>>>>>> 67e74f227ac7e31b6b20d572d1a15142f5800682
+=======
+        <activity android:name=".perencanaan" />
+        <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".recommend" />
+        <activity android:name=".detail_peserta" />
+        <activity android:name=".post_tour" />
+        <activity android:name=".detail_tour" />
+        <activity android:name=".buat_tour"></activity>
+>>>>>>> d9af1c624ae4827c38ef3e023675c05cfbcb365c
     </application>
 
 </manifest>

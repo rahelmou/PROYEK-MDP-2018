@@ -46,7 +46,8 @@
     <activity android:name=".SignUpActivity" />
     <activity android:name=".SignUp2Activity" />
     <activity android:name=".perencanaan" />
-    <activity android:name=".detail_peserta"></activity>
+    <activity android:name=".detail_peserta" />
+    <activity android:name=".post_tour"></activity>
   </application>
 
 </manifest>

@@ -2,4 +2,14 @@
   <string name="app_name">tourbook</string>
   <string name="facebook_app_id">1681012095287072</string>
   <string name="fb_login_protocol_scheme">fb1681012095287072</string>
+  <string name="pilih_jam" />
+  <string name="pilih_tanggal" />
+  <string name="todo" />
+  <string name="travel_word" />
+  <string name="tour_ke" />
+  <string name="_10_ags_14_ags_2018" />
+  <string name="destinasi" />
+  <string name="recommend" />
+  <string name="titik" />
+  <string name="add" />
 </resources>

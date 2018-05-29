@@ -21,7 +21,18 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".HomeActivity" />
+<<<<<<< HEAD
         <activity android:name=".FacebookLoginActivity" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <activity android:name=".CreateTourActivity" />
+=======
+        <activity android:name=".FacebookLoginActivity"></activity>
+=======
+        <activity android:name=".FacebookLoginActivity" />
+>>>>>>> d9af1c624ae4827c38ef3e023675c05cfbcb365c
+>>>>>>> ad1bba36c4a7bb91c7f634695160e3ee64ffe344
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -43,8 +54,26 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignUp2Activity"></activity>
+=======
+<<<<<<< HEAD
+>>>>>>> 67e74f227ac7e31b6b20d572d1a15142f5800682
+=======
+        <activity android:name=".perencanaan" />
+        <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".recommend" />
+        <activity android:name=".detail_peserta" />
+        <activity android:name=".post_tour" />
+        <activity android:name=".detail_tour" />
+        <activity android:name=".buat_tour"></activity>
+>>>>>>> d9af1c624ae4827c38ef3e023675c05cfbcb365c
+>>>>>>> ad1bba36c4a7bb91c7f634695160e3ee64ffe344
     </application>
 
 </manifest>

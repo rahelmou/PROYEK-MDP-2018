@@ -2,4 +2,33 @@
     <string name="app_name">tourbook</string>
     <string name="facebook_app_id">1681012095287072</string>
     <string name="fb_login_protocol_scheme">fb1681012095287072</string>
+    <string name="pilih_jam">Pilih Jam :</string>
+    <string name="pilih_tanggal">Pilih Tanggal :</string>
+    <string name="recommend">Recommend</string>
+    <string name="destinasi">Destinasi :</string>
+    <string name="add">Add</string>
+    <string name="titik">:</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="tour_ke">Tour ke</string>
+    <string name="_10_ags_14_ags_2018">10 Ags - 14 Ags 2018</string>
+    <string name="travel_word">Travel Word</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="pesan_notification">Pesan Notification</string>
+    <string name="travel_world">Travel World</string>
+    <string name="_1_hour_ago">1 hour ago</string>
+    <string name="tour_ke_bali">Tour ke Bali</string>
+    <string name="todo">TODO</string>
+    <string name="todo">TODO</string>
+    <string name="lokasi">Lokasi :</string>
+    <string name="show">Show</string>
+    <string name="kesenian">Kesenian</string>
+    <string name="kuliner">Kuliner</string>
+    <string name="pura">Pura</string>
+    <string name="pusat_oleh_oleh">Pusat Oleh-oleh</string>
+    <string name="pantai">Pantai</string>
+    <string name="destinasi">Destinasi :</string>
 </resources>

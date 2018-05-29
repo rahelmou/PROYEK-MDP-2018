@@ -23,12 +23,9 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.facebook.android:facebook-login:[4,5)'
-<<<<<<< HEAD
     compile 'com.google.android.gms:play-services-auth:15.0.1'
-=======
 
     implementation 'com.android.support:support-v4:26.1.0'
->>>>>>> ad1bba36c4a7bb91c7f634695160e3ee64ffe344
     compile 'com.android.volley:volley:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -38,25 +35,3 @@ dependencies {
 
 
 
-
-<<<<<<< HEAD
-
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 67e74f227ac7e31b6b20d572d1a15142f5800682
-=======
-
-
-
-
-
-
-
-
-
->>>>>>> d9af1c624ae4827c38ef3e023675c05cfbcb365c
->>>>>>> ad1bba36c4a7bb91c7f634695160e3ee64ffe344

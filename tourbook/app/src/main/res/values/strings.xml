@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">tourbook</string>
-    <string name="facebook_app_id">1681012095287072</string>
-    <string name="fb_login_protocol_scheme">fb1681012095287072</string>
+  <string name="app_name">tourbook</string>
+  <string name="facebook_app_id">1681012095287072</string>
+  <string name="fb_login_protocol_scheme">fb1681012095287072</string>
 </resources>
